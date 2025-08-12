@@ -1,4 +1,22 @@
-<h2><%= @task.title %></h2>
+<p style="display: flex; align-items: center; gap: 8px;">
+  <%= check_box_tag 'completed', '1', @task.completed, disabled: true %>
+  <strong><%= @task.title %></strong>
+</p>
 <p><%= @task.details %></p>
-<%= check_box_tag 'completed', '1', @task.completed, disabled: true %>
 
+<button>
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+</button>
+<button><%= link_to "Go Back",  tasks_path() %></button>
+
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.check_box :completed %>
+  <%= f.submit %>
+<% end %>
