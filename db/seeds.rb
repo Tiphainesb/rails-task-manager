@@ -7,3 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Task.create!(
+  title: "Faire les courses",
+  details: "Acheter des légumes, du pain et du lait",
+  completed: false
+)
+
+Task.create!(
+  title: "Réviser le code Ruby",
+  details: "Travailler sur les migrations et les seeds",
+  completed: true
+)
+
+Task.create!(
+  title: "Préparer la présentation",
+  details: "Slides à finaliser avant vendredi",
+  completed: false
+)

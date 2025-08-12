@@ -1,0 +1,4 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<%= check_box_tag 'completed', '1', @task.completed, disabled: true %>
+
